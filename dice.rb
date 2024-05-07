@@ -38,10 +38,9 @@ end
 
 get("/dice/1/20") do
   die = rand(1..20)
-  outcome_dice_1_20 = "You rolled a #{die}."
+  @outcome_dice_1_20 = "You rolled a #{die}."
 
-  "<h1>1d20</h1>
-  <p>#{outcome_dice_1_20}</p>"
+  erb(:one_twenty)
 end
 
 
@@ -53,10 +52,9 @@ fourth_die = rand(1..4)
 fifth_die = rand(1..4)
 sum_dice_5_4 = first_die + second_die + third_die + fourth_die + fifth_die
 
-outcome_dice_5_4 = "You rolled a #{first_die}, a #{second_die}, a #{third_die}, a #{fourth_die} and a #{fifth_die} for a total of #{sum_dice_5_4}."
+@outcome_dice_5_4 = "You rolled a #{first_die}, a #{second_die}, a #{third_die}, a #{fourth_die} and a #{fifth_die} for a total of #{sum_dice_5_4}."
 
-"<h1>5d4</h1>
-<p>#{outcome_dice_5_4}</p>"
+erb(:five_four)
 
 end
 
