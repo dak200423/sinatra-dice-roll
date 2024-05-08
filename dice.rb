@@ -45,14 +45,13 @@ end
 
 
 get("/dice/5/4") do
-first_die = rand(1..4)
-second_die = rand(1..4)
-third_die = rand(1..4)
-fourth_die = rand(1..4)
-fifth_die = rand(1..4)
-sum_dice_5_4 = first_die + second_die + third_die + fourth_die + fifth_die
+  @rolls = []
 
-@outcome_dice_5_4 = "You rolled a #{first_die}, a #{second_die}, a #{third_die}, a #{fourth_die} and a #{fifth_die} for a total of #{sum_dice_5_4}."
+  5.times do
+    die = rand(1..4)
+
+    @rolls.push(die)
+  end
 
 erb(:five_four)
 
