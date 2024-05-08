@@ -28,10 +28,14 @@ get("/dice/2/6") do
 end
 
 get("/dice/2/10") do
-  first_die = rand(1..10)
-  second_die = rand(1..10)
-  sum = first_die + second_die
-  @outcome_dice_2_10 = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+  @rolls = []
+
+  2.times do
+     die = rand(1..10)
+
+     @rolls.push(die)
+
+  end
 
   erb(:two_ten)
 end
