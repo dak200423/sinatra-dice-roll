@@ -37,8 +37,8 @@ get("/dice/2/10") do
 end
 
 get("/dice/1/20") do
-  die = rand(1..20)
-  @outcome_dice_1_20 = "You rolled a #{die}."
+  @die = rand(1..20)
+  @outcome_dice_1_20 = "You rolled a #{@die}."
 
   erb(:one_twenty)
 end
